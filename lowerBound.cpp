@@ -31,17 +31,22 @@ int main(){
 int upperBound(int arr[],int n,int target){
 
 	int lwr=0,upr=n-1,mid=0;
+	if(arr[lwr]>target){
+		return -1;
+	}
 	while(lwr<upr){
 		mid=(lwr+upr)/2;
 		
-		if(arr[mid]>target){
-			upr=mid;
+		if(arr[mid]<target){
+			lwr=mid+1;
+			
 		}
 		else{
-			lwr=mid+1;
+			upr=mid;
 		}
 		
 	}
+	
 	return lwr;
 	
 }

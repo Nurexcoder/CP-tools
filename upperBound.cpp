@@ -31,6 +31,9 @@ int main(){
 int upperBound(int arr[],int n,int target){
 
 	int lwr=0,upr=n-1,mid=0;
+	if(arr[upr]<=target){
+		return -1;
+	}
 	while(lwr<upr){
 		mid=(lwr+upr)/2;
 		
@@ -42,6 +45,7 @@ int upperBound(int arr[],int n,int target){
 		}
 		
 	}
+
 	return upr;
 	
 }
